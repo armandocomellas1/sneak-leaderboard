@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.leaderboard {
+  display: flex;
+  justify-content: center;
+}
+.leaderboard .left_score {
+  margin-right: 20%;
+  display: flex;
+  flex-direction: column;
+}
+.leaderboard .left_score .title_score {
+  display: flex;
+}
+.leaderboard .right_add {
+  display: flex;
+  flex-direction: column;
+}
+.leaderboard .right_add .form_struct {
+  display: flex;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=style.css.map */
