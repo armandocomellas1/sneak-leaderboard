@@ -1,21 +1,31 @@
 import './style.css';
+// import arraydef from './arraydef';
+import createGame from './setgame';
 import arrayDefault from './default';
+import getLocalStorage from './refresh';
 
-const getTheArra = arrayDefault();
-let count = 0;
-getTheArra.forEach((Number) => {
-  const buildLine = `
-    Name: ${Number}
-  `;
-  const getContainer = document.getElementById('recent');
-  const createDiv = document.createElement('div');
-  createDiv.classList.add('line');
-  createDiv.innerHTML = buildLine;
-  if (count % 2 !== 0) {
-    createDiv.style.backgroundColor = 'rgb(221, 221, 221)';
-  } else {
-    createDiv.style.backgroundColor = 'rgb(255, 255, 255)';
+const loadStorage = localStorage.getItem('List');
+if (loadStorage === null) {
+  createGame();
+}
+
+document.getElementById('add_game').addEventListener('submit', (event) => {
+  event.preventDefault();
+  const getName = event.target[0].value;
+  const getScore = event.target[1].value;
+  arrayDefault(getName, getScore);
+});
+
+document.getElementById('refresh_btn').addEventListener('click', () => {
+  const getAll = document.getElementById('recent');
+  let child = getAll.lastElementChild;
+  while (child) {
+    getAll.removeChild(child);
+    child = getAll.lastElementChild;
   }
-  count += 1;
-  getContainer.appendChild(createDiv);
+  getLocalStorage();
+});
+
+window.addEventListener('load', () => {
+  getLocalStorage();
 });
