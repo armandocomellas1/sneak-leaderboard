@@ -15,15 +15,15 @@
       <article class="left_score">
         <div class="title_score">
           <h3>Recent scores</h3>
-          <input type="button" value="Refresh">
+          <input id="refresh_btn" type="submit" value="Refresh">
         </div>
         <div id="recent"></div>
       </article>
       <article class="right_add">
         <h3 class="second">Add your score</h3>
-        <form action="#" method="post" class="form_struct">
-          <input class="enter" type="text" placeholder="Your name">
-          <input class="enter" type="text" placeholder="Your score">
+        <form action="/" id="add_game" class="form_struct">
+          <input class="enter_name" type="text" placeholder="Your name" required>
+          <input class="enter_score" type="text" placeholder="Your score" required>
           <input class="submit_btn" type="submit" value="Submit">
         </form>
       </article>

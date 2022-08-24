@@ -31,10 +31,6 @@
   margin-bottom: 10%;
 }
 
-.container .leaderboard .right_add h3 {
-  margin-bottom: 10%;
-}
-
 .container .leaderboard .left_score .title_score h3 {
   padding-right: 1%;
 }
@@ -48,13 +44,22 @@
   flex-direction: column;
 }
 
+.container .leaderboard .right_add .second {
+  margin-bottom: 10%;
+}
+
 .container .leaderboard .right_add .form_struct {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-.container .leaderboard .right_add .form_struct .enter {
+.container .leaderboard .right_add .form_struct .enter_name {
+  margin-bottom: 10%;
+  border: 2px solid black;
+}
+
+.container .leaderboard .right_add .form_struct .enter_score {
   margin-bottom: 10%;
   border: 2px solid black;
 }
