@@ -1,8 +1,8 @@
-const arrayDefault = ((named, scored) => {
-  const getId = 'SeEHnRhRvxVjE8M8I44H';
+const arrayDefault = (async (named, scored) => {
+  const getId = localStorage.getItem('List');
   const urlIs = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${getId}/scores/`;
 
-  fetch(urlIs, {
+  const response = await fetch(urlIs, {
     method: 'POST',
     body: JSON.stringify({
       user: named,
@@ -11,9 +11,10 @@ const arrayDefault = ((named, scored) => {
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },
-  }).then((response) => response.json()).then((json) => {
-    throw json;
   });
+  document.getElementsByClassName('enter_name')[0].value = '';
+  document.getElementsByClassName('enter_score')[0].value = '';
+  await response.json();
 });
 
 export default arrayDefault;

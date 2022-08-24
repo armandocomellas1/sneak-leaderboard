@@ -1,5 +1,5 @@
-const createGame = () => {
-  fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/', {
+const createGame = async () => {
+  const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/', {
     method: 'POST',
     body: JSON.stringify({
       name: 'RomanChess',
@@ -7,9 +7,10 @@ const createGame = () => {
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },
-  }).then((response) => response.json()).then(() => {
-    localStorage.setItem('List', 'SeEHnRhRvxVjE8M8I44H');
   });
+  const data = await response.json();
+  const getId = data.result.split(' ')[3];
+  localStorage.setItem('List', getId);
 };
 
 export default createGame;
