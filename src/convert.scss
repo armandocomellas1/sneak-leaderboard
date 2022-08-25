@@ -5,22 +5,23 @@
 
 .container {
   background-color: rgb(255, 255, 255);
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 50px;
 
   header {
-    padding-left: 2%;
-    padding-top: 4%;
-    padding-bottom: 6%;
+    margin-bottom: 50px;
   }
 
   .leaderboard {
     display: flex;
-    justify-content: center;
+    padding-left: 30px;
 
     .left_score {
-      margin-right: 20%;
       display: flex;
       flex-direction: column;
-      width: 40%;
+      margin-right: 100px;
+      width: 200px;
 
       .title_score {
         display: flex;
@@ -30,16 +31,34 @@
         h3 {
           padding-right: 1%;
         }
+
+        #refresh_btn {
+          border: 2px solid black;
+          padding: 1px 10px;
+          box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.9);
+          border-radius: 4px;
+        }
       }
 
       #recent {
-        border: 2px solid black;
+        border: 3px solid black;
+        border-radius: 3px;
+
+        .line {
+          display: flex;
+          align-items: center;
+          padding-left: 10px;
+          font-weight: bold;
+          letter-spacing: -0.8px;
+          height: 25px;
+        }
       }
     }
 
     .right_add {
       display: flex;
       flex-direction: column;
+      margin-left: 100px;
 
       .second {
         margin-bottom: 10%;
@@ -53,17 +72,60 @@
         .enter_name {
           margin-bottom: 10%;
           border: 2px solid black;
+          height: 25px;
+          padding-left: 10px;
+          border-radius: 7px;
         }
 
         .enter_score {
           margin-bottom: 10%;
           border: 2px solid black;
+          height: 25px;
+          padding-left: 10px;
+          border-radius: 7px;
+
+        }
+
+        ::placeholder {
+          color: rgba(0, 0, 255, 0.623);
         }
 
         .submit_btn {
           width: 40%;
           border: 2px solid black;
+          box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.9);
+          border-radius: 4px;
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 763px) {
+  .container {
+
+    header {
+      display: flex;
+      justify-content: center;
+      padding-left: 30px;
+    }
+
+    .leaderboard {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+
+      .left_score {
+        display: flex;
+        flex-direction: column;
+        margin-right: 0;
+      }
+
+      .right_add {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0;
+        margin-bottom: 50px;
       }
     }
   }
