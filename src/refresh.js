@@ -10,7 +10,11 @@ const getLocalStorage = async () => {
   const data = await response.json();
   let count = 0;
   const getJson = data.result;
-  getJson.forEach((line) => {
+  const sortObj = getJson.sort((a, b) => {
+    const rest = b.score - a.score;
+    return rest;
+  });
+  sortObj.forEach((line) => {
     const game = {
       name: line.user,
       score: line.score,
